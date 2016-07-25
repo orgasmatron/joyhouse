@@ -1,0 +1,118 @@
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
+
+DROP SCHEMA IF EXISTS `cortez` ;
+CREATE SCHEMA IF NOT EXISTS `cortez` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ;
+USE `cortez` ;
+
+- -----------------------------------------------------
+-- Table `cortez`.`categoryGirls`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `cortez`.`categoryGirls` ;
+
+CREATE  TABLE IF NOT EXISTS `cortez`.`categoryGirls` (
+  `id` TINYINT UNSIGNED NOT NULL AUTO_INCREMENT ,
+  `name` VARCHAR(45) NOT NULL ,
+  PRIMARY KEY (`id`) )
+ENGINE = InnoDB
+COMMENT = 'contains girls category';
+
+- -----------------------------------------------------
+-- Table `cortez`.`categoryRooms`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `cortez`.`categoryRooms` ;
+
+CREATE  TABLE IF NOT EXISTS `cortez`.`categoryRooms` (
+  `id` TINYINT UNSIGNED NOT NULL AUTO_INCREMENT ,
+  `name` VARCHAR(45) NOT NULL ,
+  PRIMARY KEY (`id`) )
+ENGINE = InnoDB
+COMMENT = 'contains rooms category';
+
+-- -----------------------------------------------------
+-- Table `cortez`.`girls`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `cortez`.`girls` ;
+
+CREATE  TABLE IF NOT EXISTS `cortez`.`girls` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+  `name` VARCHAR(45) NOT NULL ,
+  `price` DECIMAL(5,2) NOT NULL ,
+  `description` TINYTEXT NULL ,
+  `last_update` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP ,
+  `category_id` TINYINT UNSIGNED NOT NULL ,
+  PRIMARY KEY (`id`) ,
+  INDEX `fk_girls_category` (`category_id` ASC) ,
+  CONSTRAINT `fk_girls_category`
+    FOREIGN KEY (`category_id` )
+    REFERENCES `cortez`.`categoryGirls` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+COMMENT = 'contains girls details';
+
+-- -----------------------------------------------------
+-- Table `cortez`.`rooms`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `cortez`.`rooms`;
+
+CREATE  TABLE IF NOT EXISTS `cortez`.`rooms` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+  `name` VARCHAR(45) NOT NULL ,
+  `price` DECIMAL(5,2) NOT NULL ,
+  `description` TINYTEXT NULL ,
+  `last_update` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP ,
+  `category_id` TINYINT UNSIGNED NOT NULL ,
+  PRIMARY KEY (`id`) ,
+  INDEX `fk_rooms_category` (`category_id` ASC) ,
+  CONSTRAINT `fk_rooms_category`
+    FOREIGN KEY (`category_id` )
+    REFERENCES `cortez`.`categoryRooms` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+COMMENT = 'contains rooms details';
+
+
+
+
+
+INSERT INTO `categorygirls` (`name`) VALUES ('Redhair'),('Blond'),('Darkhair');
+
+INSERT INTO `categoryrooms` (`name`) VALUES ('Standart'),('Lux'),('President lux'),('BDSM room'),('Hospital room');
+
+
+--
+-- Sample data for table `product`
+--
+
+INSERT INTO `girls` (`name`, price, description, category_id) VALUES ('Lara', 90, 'Age:22 Height:170 Weight:55kg Bust:2', 1);
+INSERT INTO `girls` (`name`, price, description, category_id) VALUES ('Ameli', 85, 'Age:29 Height:169 Weight:57kg Bust:3', 1);
+INSERT INTO `girls` (`name`, price, description, category_id) VALUES ('Helga', 100, 'Age:20 Height:173 Weight:61kg Bust:3', 1);
+
+INSERT INTO `girls` (`name`, price, description, category_id) VALUES ('Sara', 80, 'Age:35 Height:168 Weight:59kg Bust:1', 2);
+INSERT INTO `girls` (`name`, price, description, category_id) VALUES ('Cleo', 95, 'Age:21 Height:170 Weight:62kg Bust:4', 2);
+INSERT INTO `girls` (`name`, price, description, category_id) VALUES ('Sveta', 90, 'Age:22 Height:175 Weight:60kg Bust:2', 2);
+INSERT INTO `girls` (`name`, price, description, category_id) VALUES ('Baby', 125, 'Age:17 Height:155 Weight:51kg Bust:2', 2);
+
+INSERT INTO `girls` (`name`, price, description, category_id) VALUES ('Mendeleevna', 120, 'Age:17 Height:169 Weight:57kg Bust:2', 3);
+INSERT INTO `girls` (`name`, price, description, category_id) VALUES ('Vanessa', 75, 'Age:38 Height:165 Weight:60kg Bust:3', 3);
+INSERT INTO `girls` (`name`, price, description, category_id) VALUES ('Nina', 110, 'Age:18 Height:160 Weight:55kg Bust:2', 3);
+INSERT INTO `girls` (`name`, price, description, category_id) VALUES ('Pumpkin', 65, 'Age:19 Height:163 Weight:76kg Bust:5', 3);
+INSERT INTO `girls` (`name`, price, description, category_id) VALUES ('White Rabbit', 85, 'Age:28 Height:173 Weight:58kg Bust:1', 3);
+
+-- rooms
+--
+--
+
+INSERT INTO `rooms` (`name`, price, description, category_id) VALUES ('Standart room' , 15, 'Standart room for you', 1);
+INSERT INTO `rooms` (`name`, price, description, category_id) VALUES ('Lux' , 30, 'Have fun with comfort', 2);
+INSERT INTO `rooms` (`name`, price, description, category_id) VALUES ('President lux' , 40, 'Even the president of jealous of you', 3);
+INSERT INTO `rooms` (`name`, price, description, category_id) VALUES ('BDSM room' , 35, 'For those who like it hot', 4);
+INSERT INTO `rooms` (`name`, price, description, category_id) VALUES ('Hospital room' , 30, 'The disease is not an occasion for sadness', 5);
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

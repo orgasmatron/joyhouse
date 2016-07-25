@@ -1,0 +1,260 @@
+
+/* 
+    Created on : 23.03.2016, 19:11:48
+    Author     : Юра
+*/
+
+body{
+    font-family: Arial;
+    width: 850px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+
+
+
+table {
+    
+    border-spacing: 0;
+    text-align: center;
+    border: solid 1px #f5eabe;
+}
+
+tableCart {
+    
+    border-spacing: 0;
+    text-align: center;
+    border: solid 1px #f5eabe;
+    
+}
+
+
+#main{
+    background: #000000;
+}
+#header{
+    width: 850px;
+    height:50px;
+      background: #000000;
+}
+#headerText{
+    float: left;
+    margin: 0 0 0 25px;
+
+    font-family: Gothic I;
+    font-size: 40px;
+    color: #FFA500;
+}
+#widgetBar{
+     margin: 14px 11px 0;
+      height: 22px;
+    width: 600px;
+    float: left;
+}
+.horizontalMargin1 {
+     height: 13px;
+    width: 250px;
+    margin-left: 10px;
+    margin-right: 5px;
+    float: left;
+        font-family: monospace;
+    font-size: 13px;
+    color: #FFA500;
+    
+}
+.horizontalMargin2 {
+     height: 13px;
+    width: 200px;
+    margin-left: 10px;
+    margin-right: 5px;
+    float: left;
+        font-family: monospace;
+    font-size: 13px;
+    color: #FFA500;
+}
+.horizontalMargin3 {
+     height: 17px;
+    width: 100px;
+   margin-right: -10px;
+   
+    float: right;
+        font-family: monospace;
+    font-size: 15px;
+  background:#FFA500;
+}
+#footer{
+    height:75px;
+
+    clear: left;
+    background: #000000;
+}
+#footerTextPrint{
+   height:75px;
+    width: 200px; 
+     clear: left;
+    background: #000000;
+}
+#white{
+    height:60px;
+    width: 650px;
+    float: right;
+        margin: -60px 0 0 70px;
+    background: #FFFAFA;
+}
+.footerText{
+    
+    float: left;
+    margin: 7px 0 0 0px;
+    /* font styles apply to text within img alt attribute */
+    font-family: 'American Typewriter', Courier, monospace;
+    font-size: 13px;
+    color: #FFA500;
+}
+#velcomeLeftColumn{
+     
+    width: 200px;
+    float:left;
+     background: #000000;
+}
+#categoryBoxPlace{
+   margin: 20px 37px 0px; 
+}
+.girlscategoryBox{
+    height: 40px;
+    width: 100px;
+    margin: 21px 14px 10px;
+    float: inherit;
+    background: #FFA500;
+}
+#velcomeCenterColumn{
+    
+    width: 450px;
+    float:left;
+     background: #000000;
+    
+}
+#velcomeRightColumn{
+    
+    width: 200px;
+    float:left;
+     background: #000000;
+}
+#roomcategoryBoxPlace{
+  margin: 20px 11px 0px;  
+}
+.Box{
+  height: 40px;
+    width: 150px;  
+    margin: 0px 14px 0px;
+}
+.roomcategoryBox{
+    height: 40px;
+    width: 150px;
+    margin: 21px 14px 10px;
+    float: inherit;
+    background: #FFA500;
+}
+#indexLeftColumn{
+ width: 200px;
+    float: left;
+   
+    
+     background: #000000;
+}
+.categoryBoxSelect{
+    height:30px;
+    width: 150px;
+    margin: 15px 50px 6px;
+    float: inherit;
+     background: #FFA500;
+}
+.categoryBox{
+     height:30px;
+    width: 100px;
+    margin: 15px 50px 6px;
+    float: inherit;
+     background: #FFD700;
+}
+.categoryLabelText{
+    line-height: 150%;
+    font-size: x-large;
+    color:#FFA500;
+}
+.HeadcategoryLabelText{
+     line-height: 150%;
+    font-size: x-large;
+    color:#000000;
+}
+
+#indexRightColumn{
+    
+    width: 650px; 
+     float: left;
+     background: #FFA500;
+}
+#girlsTable{
+   
+    width: 620px; 
+     float: left;
+     margin: 15px 15px 6px;
+     background: #FFA500;
+}
+#table { width: 620px }
+
+#table tr { height: 90px }
+
+#table td { width: 145px }
+.lightBlue { background-color: #363636 }
+.smallText {
+    font-size: small; 
+                color: #FFA500}
+.nameGirlText{
+    color: #FFA500
+}
+.violet { background-color: #4F4F4F }
+#cartWidget{
+    width: 850px; 
+     height:55px;
+      background:  #000000;
+}
+#Widget{
+   margin: 15px 0px 0px; 
+}
+.bubble{
+    padding: 5px;
+    margin: 0 70px ;
+  line-height: 150%;
+    font-size: x-large;
+    color:#FFA500;
+}
+#cartTableResult{
+    
+  width: 410px; 
+     float: left;
+     margin: 10px 8px 6px;
+     background: #FFA500;   
+}
+
+#cartLeftColumn{
+    
+    width: 425px; 
+         background:#000000;
+          float: left;
+}
+#cartRightColumn{
+    width: 425px; 
+    
+         background:#000000;
+          float: left;
+}
+#cartNameTable{
+     line-height: 100%;
+    font-size: medium;
+    color:#FFA500;
+}
+#tableCart { width: 392px; 
+margin: 8px 8px 8px;}
+#tableCart tr { height: 80px }
+
+#tableCart td { width: 40px }
