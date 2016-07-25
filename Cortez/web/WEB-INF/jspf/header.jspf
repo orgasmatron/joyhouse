@@ -1,0 +1,59 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/stylecss.css">
+
+                <title>WELCOME TO CORTEZ</title>
+    </head>
+    <body>
+        <div id="main">
+            <div id="header">
+              
+                <div id="headerText"  > 
+                    <a style="color:#FFA500; text-decoration:none" href="index.jsp">CORTEZ</a>
+   
+                </div>
+                 <div id="widgetBar">
+                <span class="horizontalMargin1">
+                   
+                    <c:choose>
+                        <c:when test="${(cart.getRooms () == null)}">
+                         The room is not ordered
+                        </c:when>
+                        <c:otherwise>
+                         Your room is ${cart. getRooms ().getProduct().name}
+                        </c:otherwise>
+                      </c:choose>
+                          
+                </span>
+                     <span class="horizontalMargin2">
+                    
+                     <c:choose>
+                        <c:when test="${(cart.getNumberOfGirlsItems() == null) || (cart.getNumberOfGirlsItems() == 0)}">
+                    Girls is not ordered
+                        </c:when>
+                        <c:otherwise>
+                         ${cart. getNumberOfGirlsItems()} girls ordered
+                        </c:otherwise>
+                      </c:choose>
+                          
+                </span>
+                     
+                     <c:choose>
+                         <c:when test="${(!empty cart)&&((cart.getNumberOfGirlsItems() != 0)||(cart.getRooms () != null))}"> 
+                    <span class="horizontalMargin3">
+                       <a style="color:#000000; text-decoration:none" href="viewCart">View cart</a>
+                        
+                    </span>
+                    </c:when> 
+                     </c:choose>
+                     
+                </div>
+               
+       
+            
+              </div>
